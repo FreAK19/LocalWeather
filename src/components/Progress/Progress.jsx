@@ -5,15 +5,14 @@ import './Progress.less';
 
 const colorSpinner = '#485';
 
-const Progress = ({ show }) => (
+const Progress = ({ show }) =>
   show ? (
-    <div className='spinner'>
-      <div className='spinner__box'>
+    <div className="spinner">
+      <div className="spinner__box">
         <CircularProgress size={60} color={colorSpinner} />
       </div>
     </div>
-  ) : null
-);
+  ) : null;
 
 Progress.propTypes = { show: PropTypes.bool.isRequired };
 

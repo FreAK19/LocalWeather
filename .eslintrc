@@ -21,6 +21,7 @@
   },
   "rules": {
     "no-debugger": 0,
+    "camelcase": 0,
     "no-console": 0,
     "jsx-quotes": [1, "prefer-single"],
     "react/jsx-no-undef": 1

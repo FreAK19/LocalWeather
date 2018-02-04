@@ -1,38 +1,41 @@
 import React from 'react';
-import PropTypes from 'prop-types'
-import './Details.less'
+import PropTypes from 'prop-types';
+import './Details.less';
 
-const Details = ({wind, pressure, humidity, min, max}) => (
- <div className='detail'>
-   <table className='detail__table'>
-     <tbody>
-     <tr>
-       <td>Wind Speed</td>
-       <td>30 Km/h</td>
-     </tr>
-     <tr>
-       <td>Humidity</td>
-       <td>30 %</td>
-     </tr>
-     <tr>
-       <td>Pressure</td>
-       <td>30 hPa</td>
-     </tr>
-     <tr>
-       <td>Max</td>
-       <td>30 C</td>
-     </tr>
-     <tr>
-       <td>Min</td>
-       <td>30 C</td>
-     </tr>
-     </tbody>
-   </table>
- </div>
-);
+const Details = ({ details }) => {
+  const { pressure, speed, temp_max, temp_min, humidity} = details;
+  return (
+    <div className='detail'>
+      <table className='detail__table'>
+        <tbody>
+        <tr>
+          <td>Wind Speed</td>
+          <td>{speed} m/sec</td>
+        </tr>
+        <tr>
+          <td>Humidity</td>
+          <td>{humidity} %</td>
+        </tr>
+        <tr>
+          <td>Pressure</td>
+          <td>{pressure} hPa</td>
+        </tr>
+        <tr>
+          <td>Max</td>
+          <td>{temp_max} C</td>
+        </tr>
+        <tr>
+          <td>Min</td>
+          <td>{temp_min} C</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  )
+};
 
 Details.propTypes = {
-  wind: PropTypes.number.isRequired
+  details: PropTypes.any.isRequired
 };
 
 export default Details;
