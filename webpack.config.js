@@ -63,22 +63,17 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
         exclude: /node_modules/,
         use: [
           {
-            loader: 'file-loader',
+            loader: "url-loader",
             options: {
-              name: '[path][name].[ext]',
-              outputPath: 'images/'
+              limit: 20000,
+              name: '[path]/[name].[ext]'
             }
           }
         ]
-      },
-      {
-        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-        exclude: /node_modules/,
-        loader: 'url-loader?limit=100000'
       }
     ]
   },
