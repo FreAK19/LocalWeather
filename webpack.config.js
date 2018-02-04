@@ -42,17 +42,11 @@ module.exports = {
     colors: true
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
+    extensions: ['.js', '.jsx', '.json', '.less'],
     modules: ['node_modules']
   },
   module: {
     rules: [
-      {
-        enforce: "pre",
-        test: /\.jsx?$/,
-        loader: "eslint-loader",
-        exclude: /node_modules/
-      },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
