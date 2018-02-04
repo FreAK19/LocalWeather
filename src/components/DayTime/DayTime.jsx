@@ -46,7 +46,7 @@ export default class DayTime extends Component {
       <div className='info'>
         {
           this.props.error ?
-            <h3 className='info__caption'> Please turn on Geolocation on Browser </h3> :
+            <h3 className='info__caption small'> Please turn on Geolocation on Browser </h3> :
             <h3 className='info__caption'>{this.props.caption}</h3>
         }
         <p>{this.dayOfWeek[now.getDay()]}</p>
