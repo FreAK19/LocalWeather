@@ -61,6 +61,24 @@ module.exports = {
           'css-loader',
           'less-loader'
         ]
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+              outputPath: 'images/'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        exclude: /node_modules/,
+        loader: 'url-loader?limit=100000'
       }
     ]
   },
