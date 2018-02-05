@@ -1,5 +1,5 @@
 import React from 'react';
-import Details from '../components/Details/Details'
+import Details from '../components/Details/Details';
 
 test('Details should render correctly', () => {
   const obj = {
@@ -10,6 +10,6 @@ test('Details should render correctly', () => {
     temp_max: 35,
     speed: 10
   };
-  const component = shallow(<Details details={obj}/>);
+  const component = shallow(<Details details={obj} />);
   expect(component).toMatchSnapshot();
 });

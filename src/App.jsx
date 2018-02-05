@@ -46,23 +46,21 @@ export default class App extends Component {
       this.setState({
         spinner: false,
         error: false,
-        data: Object.assign(
-          {},
-          this.state.data,
-          { name: 'Geolocation is not supported by this browser.' })
-      })
+        data: Object.assign({}, this.state.data, { name: 'Geolocation is not supported by this browser.' })
+      });
     }
   }
 
   getWeatherData(location) {
     const { latitude: lat, longitude: lon } = location;
     fetch(`https://fcc-weather-api.glitch.me/api/current?lat=${lat}&lon=${lon}`).then(response =>
-      response.json().then(data =>
+      response.json().then(data => {
         this.setState({
           spinner: false,
           data
-        })
-      )
+        });
+        return data;
+      })
     );
   }
 

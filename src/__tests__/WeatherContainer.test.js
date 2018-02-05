@@ -1,17 +1,17 @@
 import React from 'react';
-import WeatherContainer from '../components/WeatherContainer/WeatherContainer'
+import WeatherContainer from '../components/WeatherContainer/WeatherContainer';
 
 test('WeatherContainer should render correctly', () => {
   const data = {
     main: {
       temp: 0,
-        pressure: 0,
-        humidity: 0,
-        temp_min: 0,
-        temp_max: 0
+      pressure: 0,
+      humidity: 0,
+      temp_min: 0,
+      temp_max: 0
     },
     name: '',
-      wind: {
+    wind: {
       speed: 0
     },
     weather: [
@@ -22,7 +22,7 @@ test('WeatherContainer should render correctly', () => {
       }
     ]
   };
-  const component = shallow(<WeatherContainer error={false} weather={data}/>);
+  const component = shallow(<WeatherContainer error={false} weather={data} />);
   expect(component).toMatchSnapshot();
 });
 
@@ -47,6 +47,6 @@ test('WeatherContainer has two children elements', () => {
       }
     ]
   };
-  const component = shallow(<WeatherContainer error={false} weather={data}/>);
+  const component = shallow(<WeatherContainer error={false} weather={data} />);
   expect(component.children().length).toBe(2);
 });

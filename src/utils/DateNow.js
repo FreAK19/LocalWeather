@@ -7,7 +7,7 @@ export default class DateNow extends Date {
       super();
       this.now = new Date();
     }
-    this.daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    this.daysOfWeek = ['Saturday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Sunday'];
     this.monthsOfYear = [
       'January',
       'February',

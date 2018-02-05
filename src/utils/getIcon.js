@@ -1,4 +1,4 @@
-export default (id) => {
+export default id => {
   const icons = {
     day: {
       //  Thunderstorm
@@ -69,7 +69,7 @@ export default (id) => {
       903: 'pe-is-w-wind',
       904: 'pe-is-w-sun-2',
       905: 'pe-is-w-wind-cone',
-      906: 'pe-is-w-hail-1',
+      906: 'pe-is-w-hail-1'
     },
     night: {
       //  Thunderstorm
@@ -140,9 +140,9 @@ export default (id) => {
       903: 'pe-is-w-wind',
       904: 'pe-is-w-thermometer-1',
       905: 'pe-is-w-wind-cone',
-      906: 'pe-is-w-hail-1',
+      906: 'pe-is-w-hail-1'
     }
   };
   const now = new Date().getHours();
-  return (now >= 21 || now <= 6) ? icons.night[id] : icons.day[id];
-}
+  return now >= 20 || now <= 6 ? icons.night[id] : icons.day[id];
+};

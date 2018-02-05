@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './Temperature.less';
 
 const Temperature = ({ temp }) => (
-  <div className='weather__temp'>
+  <div className="weather__temp">
     <p>{Math.round(temp)}</p>
     <span>C</span>
   </div>

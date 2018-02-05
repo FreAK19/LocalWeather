@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './DayTime.less';
-import DateNow from '../../utils/DateNow'
+import DateNow from '../../utils/DateNow';
 
 export default class DayTime extends Component {
   state = {
