@@ -15,14 +15,15 @@ export default class App extends Component {
         temp_min: 0,
         temp_max: 0
       },
-      name: 'Weather / Weather Status',
+      name: '',
       wind: {
         speed: 0
       },
       weather: [
         {
+          id: 800,
           main: 'Clear',
-          description: 'clear sky'
+          description: 'Weather Status'
         }
       ]
     },

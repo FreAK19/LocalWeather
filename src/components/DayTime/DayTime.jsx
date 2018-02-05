@@ -1,25 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './DayTime.less';
+import DateNow from '../../utils/DateNow'
 
 export default class DayTime extends Component {
-  dayOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  monthOfYear = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December'
-  ];
   state = {
-    now: new Date()
+    now: new DateNow()
   };
 
   static propTypes = {
@@ -39,7 +25,7 @@ export default class DayTime extends Component {
 
   _tick() {
     this.setState({
-      now: new Date()
+      now: new DateNow()
     });
   }
 
@@ -52,13 +38,13 @@ export default class DayTime extends Component {
         ) : (
           <h3 className="info__caption">{this.props.caption}</h3>
         )}
-        <p>{this.dayOfWeek[now.getDay()]}</p>
+        <p>{now.getDayToString()}</p>
         <p>
-          {this.monthOfYear[now.getMonth()]} {now.getDate()}, {now.getFullYear()}
+          {now.getMonthToString()} {now.getDate()}, {now.getFullYear()}
         </p>
         <span>
-          {now.getHours() + ':' + now.getMinutes()}
-          {now.getHours() > 12 ? ' PM' : ' AM'}
+          {now.getHoursToString()}
+          {now.getHours() >= 12 ? ' PM' : ' AM'}
         </span>
       </div>
     );

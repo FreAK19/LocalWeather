@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './WeatherStatus.less';
 
 const WeatherStatus = ({ icon, status}) => {
-  const className = `pe-is-w-${icon} pe-4x pe-va`;
+  const className = `${icon} weather__icon`;
   return (
     <div className='weather__status'>
       <h3>{status}</h3>
