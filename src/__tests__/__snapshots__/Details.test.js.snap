@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Details should render correctly 1`] = `
+<div
+  className="detail"
+>
+  <table
+    className="detail__table"
+  >
+    <tbody>
+      <tr>
+        <td>
+          Wind Speed
+        </td>
+        <td>
+          10
+           m/sec
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Humidity
+        </td>
+        <td>
+          2330
+           %
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Pressure
+        </td>
+        <td>
+          100
+           hPa
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Max
+        </td>
+        <td>
+          35
+           C
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Min
+        </td>
+        <td>
+          30
+           C
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

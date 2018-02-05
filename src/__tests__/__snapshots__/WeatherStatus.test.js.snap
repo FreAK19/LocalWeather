@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeatherStatus WeatherStatus should render correctly 1`] = `
+<div
+  className="weather__status"
+>
+  <h3>
+    Rain
+  </h3>
+  <p>
+    <i
+      className="pe-is-w-rain weather__icon"
+    />
+  </p>
+</div>
+`;
+
+exports[`WeatherStatus should render correctly 1`] = `
+<div
+  className="weather__status"
+>
+  <h3>
+    Rain
+  </h3>
+  <p>
+    <i
+      className="pe-is-w-rain weather__icon"
+    />
+  </p>
+</div>
+`;

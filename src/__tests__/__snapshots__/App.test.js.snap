@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render correctly 1`] = `
+<MuiThemeProvider>
+  <React.Fragment>
+    <WeatherContainer
+      error={false}
+      weather={
+        Object {
+          "main": Object {
+            "humidity": 0,
+            "pressure": 0,
+            "temp": 0,
+            "temp_max": 0,
+            "temp_min": 0,
+          },
+          "name": "Geolocation is not supported by this browser.",
+          "weather": Array [
+            Object {
+              "description": "Weather Status",
+              "id": 800,
+              "main": "Clear",
+            },
+          ],
+          "wind": Object {
+            "speed": 0,
+          },
+        }
+      }
+    />
+  </React.Fragment>
+</MuiThemeProvider>
+`;

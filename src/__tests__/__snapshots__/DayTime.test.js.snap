@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DayTime should render correctly 1`] = `
+<div
+  className="info"
+>
+  <h3
+    className="info__caption"
+  >
+    Geolocation is not support
+  </h3>
+  <p>
+    Monday
+  </p>
+  <p>
+    February
+     
+    5
+    , 
+    2018
+  </p>
+  <span>
+    18:39
+     PM
+  </span>
+</div>
+`;
