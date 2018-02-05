@@ -1,16 +1,13 @@
 export default class DateNow extends Date {
-  constructor() {
-    super();
-    this.now = new Date();
-    this.daysOfWeek = [
-      'Sunday',
-      'Monday',
-      'Tuesday',
-      'Wednesday',
-      'Thursday',
-      'Friday',
-      'Saturday'
-    ];
+  constructor(date) {
+    if (date) {
+      super(date);
+      this.now = new Date(date);
+    } else {
+      super();
+      this.now = new Date();
+    }
+    this.daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     this.monthsOfYear = [
       'January',
       'February',
@@ -44,7 +41,7 @@ export default class DateNow extends Date {
   }
 
   getDayToString() {
-    return this.daysOfWeek[this.now.getDate()];
+    return this.daysOfWeek[this.now.getDay()];
   }
 
   getMonthToString() {
