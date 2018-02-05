@@ -12,7 +12,7 @@ exports[`WeatherContainer should render correctly 1`] = `
       error={false}
     />
     <WeatherStatus
-      icon="pe-is-w-sun-1"
+      icon="pe-is-w-moon-2"
       status="Weather Status"
     />
   </div>

@@ -44,6 +44,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^2.4.0",
     "eslint-plugin-react": "^7.5.1",
+    "fetch-mock": "^6.0.0",
     "file-loader": "^1.1.6",
     "flow-typed": "^2.3.0",
     "jest": "^22.1.4",
@@ -51,7 +52,6 @@
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
     "prettier": "^1.10.2",
-    "react-addons-test-utils": "^15.6.2",
     "style-loader": "^0.20.1",
     "url-loader": "^0.6.2",
     "webpack": "^3.10.0",
@@ -68,7 +68,10 @@
       ".*\\.less$|\\.css$": "<rootDir>/src/__tests__/setup/dummy.js"
     },
     "verbose": true,
-    "moduleDirectories": ["node_modules", "src"],
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
     "moduleFileExtensions": [
       "js",
       "jsx"
@@ -76,6 +79,7 @@
     "testPathIgnorePatterns": [
       "<rootDir>/node_modules/",
       "<rootDir>/build/",
-      "/src/__tests__/setup/"]
+      "/src/__tests__/setup/"
+    ]
   }
 }
