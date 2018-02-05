@@ -36,11 +36,21 @@ export default class App extends Component {
         position => {
           this.getWeatherData(position.coords);
         },
-        error => this.setState({
+        error =>
+          this.setState({
             spinner: false,
             error: error.message
           })
       );
+    } else {
+      this.setState({
+        spinner: false,
+        error: false,
+        data: Object.assign(
+          {},
+          this.state.data,
+          { name: 'Geolocation is not supported by this browser.' })
+      })
     }
   }
 
