@@ -29,7 +29,8 @@ module.exports = {
             {
               loader: 'css-loader',
               options: {
-                sourceMap: false
+                sourceMap: false,
+                minimize: true
               }
             },
             {
@@ -53,7 +54,8 @@ module.exports = {
             {
               loader: 'css-loader',
               options: {
-                sourceMap: false
+                sourceMap: false,
+                minimize: true
               }
             },
             {

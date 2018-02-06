@@ -23,7 +23,11 @@ const common = {
 
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.less'],
-    modules: ['node_modules', path.join(__dirname, 'src')]
+    modules: ['node_modules', path.join(__dirname, 'src')],
+    alias: {
+      'react': 'preact-compat',
+      'react-dom': 'preact-compat'
+    }
   },
   module: {
     rules: [
