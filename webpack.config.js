@@ -1,49 +1,29 @@
+/*  eslint-disable  */
+const merge = require('webpack-merge');
+const development = require('./config/webpack.dev.config');
+const production = require('./config/webpack.prod.config');
 const path = require('path');
-const webpack = require('webpack');
+
 
 const PATH = {
-  app: path.join(__dirname, 'src/index.jsx'),
+  //  not change name App
+  app: path.join(__dirname, './src/index.jsx'),
   build: path.resolve(__dirname, 'build')
 };
 
-module.exports = {
-  entry: [
-    'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server',
-    './src/index.jsx'
-  ],
+const common = {
 
+  context: __dirname,
+  target: 'web',
   output: {
     path: PATH.build,
-    filename: 'app.bundle.js',
+    filename: '[name].bundle.js',
     publicPath: "/public/"
   },
 
-  devtool: "inline-source-map",
-  devServer: {
-    host: 'localhost',
-    port: 8080,
-    hot: true,
-    open: false,
-    historyApiFallback: true,
-    overlay: {
-      errors: true,
-      warnings: true
-    },
-    watchOptions: {
-      aggregateTimeout: 300,
-      poll: 1000
-    },
-  },
-  stats: {
-    chunks: true,
-    reasons: true,
-    colors: true
-  },
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.less'],
-    modules: ['node_modules']
+    modules: ['node_modules', path.join(__dirname, 'src')]
   },
   module: {
     rules: [
@@ -53,32 +33,62 @@ module.exports = {
         loader: 'babel-loader'
       },
       {
-        test: /\.less$/,
-        exclude: /node_modules/,
-        include: /src/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'less-loader'
-        ]
-      },
-      {
-        test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
+        test: /\.(woff|woff2|eot|ttf)$/,
         exclude: /node_modules/,
         use: [
           {
             loader: "url-loader",
             options: {
               limit: 20000,
-              name: '[path]/[name].[ext]'
+              name: './fonts/[name].[ext]'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(jpg|png|svg|gif)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 50000,
+              name: './image/[name].[ext]'
             }
           }
         ]
       }
     ]
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
-  ]
+};
+
+module.exports = function(env) {
+  if (env === 'development') {
+    return merge([
+      {
+        entry: {
+          app: [
+            'react-hot-loader/patch',
+            'webpack-dev-server/client?http://localhost:8080',
+            'webpack/hot/only-dev-server',
+            PATH.app
+          ]
+        }
+      },
+      common,
+      development
+    ]);
+  }
+  if (env === 'production') {
+    return merge([
+      {
+        entry: {
+          app: PATH.app,
+          vendor: ["react"]
+        },
+      },
+      common,
+      production
+    ])
+  }
 };
