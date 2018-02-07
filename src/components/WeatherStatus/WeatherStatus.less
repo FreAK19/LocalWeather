@@ -3,6 +3,12 @@
 .weather__status {
   flex-basis: 40%;
 
+  & > h3 {
+    margin-top: 0;
+    font-weight: 400;
+    text-transform: capitalize;
+  }
+
   @media screen and (max-width: @viewport-size-tablet) {
     & {
       flex-basis: initial;
@@ -10,10 +16,15 @@
     }
   }
 
-  & > h3 {
-    margin-top: 0;
-    font-weight: 400;
-    text-transform: capitalize;
+  @media screen and (max-width: 510px) {
+    & {
+      display: flex;
+      flex-direction: column;
+    }
+
+    & > h3 {
+      order: 1;
+    }
   }
 }
 
