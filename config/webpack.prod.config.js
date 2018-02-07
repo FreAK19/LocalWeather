@@ -17,6 +17,12 @@ module.exports = {
     colors: true,
     timings: true
   },
+  resolve: {
+    alias: {
+      'react': 'preact-compat',
+      'react-dom': 'preact-compat'
+    }
+  },
   module: {
     rules: [
       {

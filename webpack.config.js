@@ -24,10 +24,6 @@ const common = {
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.less'],
     modules: ['node_modules', path.join(__dirname, 'src')],
-    alias: {
-      'react': 'preact-compat',
-      'react-dom': 'preact-compat'
-    }
   },
   module: {
     rules: [
@@ -45,6 +41,17 @@ const common = {
             options: {
               limit: 20000,
               name: './fonts/[name].[ext]'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.ico$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]'
             }
           }
         ]
@@ -69,6 +76,8 @@ const common = {
 module.exports = function(env) {
   if (env === 'development') {
     return merge([
+      common,
+      development,
       {
         entry: {
           app: [
@@ -79,8 +88,6 @@ module.exports = function(env) {
           ]
         }
       },
-      common,
-      development
     ]);
   }
   if (env === 'production') {
