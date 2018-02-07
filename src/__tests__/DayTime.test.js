@@ -10,9 +10,9 @@ describe('DayTime', () => {
     expect(component).toMatchSnapshot();
   });
 
-  test('should render error message coerces to boolean true', () => {
+  test('should render error message based on error props', () => {
     const component = shallow(<DayTime caption="Geolocation is not support" error="some error" />);
-    const expected = 'Please turn on Geolocation on Browser';
+    const expected = 'some error';
     const actual = component.find('.info__caption').text();
     expect(actual).toMatch(expected);
   });
