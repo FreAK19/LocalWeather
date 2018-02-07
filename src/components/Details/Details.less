@@ -1,3 +1,5 @@
+@viewport-size-tablet: 640px;
+@viewport-size-phone: 510px;
 
 .detail {
   border-left: 4px solid rgb(38, 50, 56);
@@ -11,6 +13,23 @@
 
     & tr td {
       padding-right: 1rem;
+    }
+  }
+
+  @media screen and (max-width: @viewport-size-tablet) {
+    & {
+      border-left: 4px solid rgb(209, 209, 209);
+      flex-basis: 100%;
+    }
+
+    &__table {
+      padding: 1.875rem 0 2.75rem 2.735rem;
+    }
+  }
+
+  @media screen and (max-width: @viewport-size-phone) {
+    & {
+      border-left: 0;
     }
   }
 }

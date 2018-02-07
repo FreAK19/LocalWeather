@@ -1,8 +1,15 @@
+@viewport-size-tablet: 640px;
 
 .info {
   text-align: left;
   flex-basis: 210px;
   padding-right: 1rem;
+
+  @media screen and (max-width: @viewport-size-tablet) {
+    & {
+      display: none;
+    }
+  }
 
   &__caption {
     font-size: 2.7rem;

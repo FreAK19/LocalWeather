@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import './DayTime.less';
 import DateNow from '../../utils/DateNow';
@@ -30,13 +30,14 @@ export default class DayTime extends Component {
   }
 
   render() {
-    const { now } = this.state;
+    const {now} = this.state;
+    const {caption, error} = this.props;
     return (
       <div className="info">
-        {this.props.error ? (
-          <h3 className="info__caption small"> Please turn on Geolocation on Browser </h3>
+        {error ? (
+          <h3 className="info__caption small"> {error}</h3>
         ) : (
-          <h3 className="info__caption">{this.props.caption}</h3>
+          <h3 className="info__caption">{caption}</h3>
         )}
         <p>{now.getDayToString()}</p>
         <p>

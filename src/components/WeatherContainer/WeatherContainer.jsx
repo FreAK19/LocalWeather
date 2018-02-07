@@ -20,9 +20,16 @@ const WeatherContainer = ({ weather, error }) => (
   </div>
 );
 
+
+WeatherContainer.defaultProps = {
+  error: 'Please turn on Geolocation on Browser'
+};
+
+/*  eslint-disable react/forbid-prop-types  */
+
 WeatherContainer.propTypes = {
   weather: PropTypes.object.isRequired,
-  error: PropTypes.any
+  error: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
 };
 
 export default WeatherContainer;

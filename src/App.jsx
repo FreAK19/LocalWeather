@@ -31,22 +31,30 @@ export default class App extends Component {
   };
 
   componentWillMount() {
+    this.getPosition()
+  }
+
+  getPosition() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         position => {
           this.getWeatherData(position.coords);
         },
-        error =>
+        error => {
           this.setState({
             spinner: false,
             error: error.message
           })
+        }, { timeout: 20000, enableHighAccuracy: true }
       );
     } else {
       this.setState({
         spinner: false,
         error: false,
-        data: Object.assign({}, this.state.data, { name: 'Geolocation is not supported by this browser.' })
+        data: Object.assign(
+          {},
+          this.state.data,
+          { name: 'Geolocation is not supported by this browser.' })
       });
     }
   }
@@ -65,14 +73,14 @@ export default class App extends Component {
   }
 
   render() {
-    const { spinner } = this.state;
+    const { spinner, data, error } = this.state;
     return (
       <MuiThemeProvider>
         <React.Fragment>
           {spinner ? (
-            <Progress show={this.state.spinner} />
+            <Progress show={spinner} />
           ) : (
-            <WeatherContainer weather={this.state.data} error={this.state.error} />
+            <WeatherContainer weather={data} error={error} />
           )}
         </React.Fragment>
       </MuiThemeProvider>

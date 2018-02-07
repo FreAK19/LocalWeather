@@ -1,6 +1,14 @@
+@viewport-size-tablet: 640px;
 
 .weather__status {
   flex-basis: 40%;
+
+  @media screen and (max-width: @viewport-size-tablet) {
+    & {
+      flex-basis: initial;
+      margin: auto;
+    }
+  }
 
   & > h3 {
     margin-top: 0;
