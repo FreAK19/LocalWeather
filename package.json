@@ -5,6 +5,20 @@
   "main": "src/index.js",
   "author": "FreAK19 (Andrew Kiri4encko)",
   "license": "MIT",
+  "engines": {
+    "node": "8.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FreAK19/LocalWeather.git"
+  },
+  "keywords": [
+    "weather",
+    "react",
+    "node",
+    "express",
+    "heroku"
+  ],
   "scripts": {
     "build": "webpack --env production",
     "server": "webpack-dev-server --env development",

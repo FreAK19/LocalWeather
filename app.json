@@ -1,0 +1,13 @@
+{
+  "name": "Local Weather",
+  "description": "Show local weather based on Geolocation API and external weather API",
+  "repository": "https://github.com/FreAK19/LocalWeather.git",
+  "keywords": [
+    "weather",
+    "react",
+    "node",
+    "express",
+    "heroku"
+  ],
+  "image": "heroku/nodejs"
+}
