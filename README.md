@@ -1,4 +1,4 @@
-##LocalWeather 
+==LocalWeather 
 ![desktop design](./src/asset/desktop.png)
 [LocalWeather](https://localy-weather.surge.sh/) is the simple React application, showing you weather based on your current geolication position.
 Mobile version too.
@@ -24,4 +24,4 @@ yarn build              // build ready to production version
 Building use preact-compat package, for smaller bundle size.
 ### License
 
-This plugin is issued under the [MIT license](./LICENSE).
+This project is issued under the [MIT license](./LICENSE).
