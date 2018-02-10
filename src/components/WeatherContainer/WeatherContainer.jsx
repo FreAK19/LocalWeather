@@ -20,7 +20,6 @@ const WeatherContainer = ({ weather, error }) => (
   </div>
 );
 
-
 WeatherContainer.defaultProps = {
   error: 'Please turn on Geolocation on Browser'
 };

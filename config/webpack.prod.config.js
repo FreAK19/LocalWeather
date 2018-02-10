@@ -9,7 +9,7 @@ const PurifyCssPlugin = require('purifycss-webpack-plugin');
 module.exports = {
   output: {
     filename: 'js/[name].bundle.js',
-    chunkFilename: '[name].[hash].js',
+    chunkFilename: '[name].[chunkhash].js',
   },
   stats: {
     chunks: false,
