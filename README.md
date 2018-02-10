@@ -1,9 +1,9 @@
 ##LocalWeather 
-[LocalWeather](https://localy-weather.surge.sh/)
-[desktop design](./src/asset/desktop.png)
-is the simple React application, showing you weather based on your current geolication position.
+![desktop design](./src/asset/desktop.png)
+[LocalWeather](https://localy-weather.surge.sh/) is the simple React application, showing you weather based on your current geolication position.
 Mobile version too.
-[mobile design](./src/asset/mobile.png)
+
+![mobile design](./src/asset/mobile.png)
 
 #### Commands
 ```javascript
